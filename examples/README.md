@@ -129,7 +129,7 @@ uv run quick-scalar         # 04: Quick scalar convergence analysis
 
 ## Requirements
 
-- **ClearML Configuration**: `~/.clearml.conf` must be configured
+- **ClearML Configuration**: `~/clearml.conf` must be configured
 - **API Key**: Gemini API key (provided in examples)
 - **Dependencies**: Install with `uv sync --group examples`
 
@@ -184,7 +184,7 @@ The examples include robust error handling for common issues:
 ## Tips for Real Usage
 
 1. **Start with the consolidated example** - It has the most features and best UX
-2. **Check your ClearML config** - Ensure `~/.clearml.conf` is properly set up
+2. **Check your ClearML config** - Ensure `~/clearml.conf` is properly set up
 3. **Use realistic experiment IDs** - The examples will adapt to your actual data
 4. **Monitor API usage** - Gemini has rate limits, examples handle this gracefully
 5. **Customize analysis depth** - Adjust `max_steps` and `verbosity_level` as needed

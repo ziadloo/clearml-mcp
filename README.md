@@ -20,13 +20,13 @@ A lightweight **Model Context Protocol (MCP) server** that enables AI assistants
 ## 📋 Requirements
 
 - **uv** ([installation guide](https://docs.astral.sh/uv/getting-started/installation/)) for `uvx` command
-- **ClearML account** with valid API credentials in `~/.clearml/clearml.conf`
+- **ClearML account** with valid API credentials in `~/clearml.conf`
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 
-You need a configured ClearML environment with your credentials in `~/.clearml/clearml.conf`:
+You need a configured ClearML environment with your credentials in `~/clearml.conf`:
 
 ```ini
 [api]
@@ -278,7 +278,7 @@ npx @modelcontextprotocol/inspector uvx clearml-mcp
 <summary><strong>Connection Issues</strong></summary>
 
 **"No ClearML projects accessible"**
-- Verify your `~/.clearml/clearml.conf` credentials
+- Verify your `~/clearml.conf` credentials
 - Test with: `python -c "from clearml import Task; print(Task.get_projects())"`
 - Check network access to your ClearML server
 

@@ -9,7 +9,7 @@ Requirements:
 - smolagents with OpenAI and MCP support
 - clearml-mcp server (this project)
 - Google Gemini API access
-- ClearML configuration (~/.clearml.conf)
+- ClearML configuration (~/clearml.conf)
 """
 
 import os
@@ -286,7 +286,7 @@ def main():
     )
 
     console.print("\n[bold]Prerequisites Check:[/bold]")
-    console.print("✅ ClearML configured with ~/.clearml.conf")
+    console.print("✅ ClearML configured with ~/clearml.conf")
     console.print("✅ clearml-mcp server available (uvx clearml-mcp)")
     console.print("✅ smolagents with OpenAI/MCP support installed")
     console.print("✅ Google Gemini API key configured")
