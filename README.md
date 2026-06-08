@@ -28,14 +28,18 @@ A lightweight **Model Context Protocol (MCP) server** that enables AI assistants
 
 You need a configured ClearML environment with your credentials in `~/clearml.conf`:
 
-```ini
-[api]
-api_server = https://api.clear.ml
-web_server = https://app.clear.ml
-files_server = https://files.clear.ml
-credentials {
-    "access_key": "your-access-key",
-    "secret_key": "your-secret-key"
+```conf
+api {
+  api_server = https://api.clear.ml
+  web_server = https://app.clear.ml
+  files_server = https://files.clear.ml
+  credentials {
+      "access_key": "your-access-key",
+      "secret_key": "your-secret-key"
+  }
+  # Disable certificate verification if needed (e.g., Python SSL doesn't match
+  # underscore subdomains with wildcard certs)
+  # verify_certificate = false
 }
 ```
 
