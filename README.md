@@ -44,11 +44,9 @@ Get your credentials from [ClearML Settings](https://app.clear.ml/settings).
 ### Installation
 
 ```bash
-# Install from PyPI
-pip install clearml-mcp
-
-# Or run directly with uvx (no installation needed)
-uvx clearml-mcp
+git clone https://github.com/ziadloo/clearml-mcp.git
+cd clearml-mcp
+uv tool install --force .
 ```
 
 ## 🔌 Integrations
@@ -168,25 +166,53 @@ For any MCP-compatible AI assistant, use this configuration:
 
 ## 🛠️ Available Tools
 
-The ClearML MCP server provides **14 comprehensive tools** for ML experiment analysis:
+The ClearML MCP server provides **36 comprehensive tools** for complete ML management, monitoring, and analysis:
 
-### 📊 Task Operations
+### 📊 Task Read Operations
 - `get_task_info` - Get detailed task information, parameters, and status
 - `list_tasks` - List tasks with advanced filtering (project, status, tags, user)
 - `get_task_parameters` - Retrieve hyperparameters and configuration
 - `get_task_metrics` - Access training metrics, scalars, and plots
-- `get_task_artifacts` - Get artifacts, model files, and outputs
+- `get_task_artifacts` - Get metadata for artifacts, model weights, and outputs
+
+### ⚙️ Task Mutation Operations
+- `create_task` - Create a new task/experiment with name, project, tags, and parameters
+- `clone_task` - Clone an existing task or experiment
+- `enqueue_task` - Enqueue a task to an execution queue
+- `change_task_status` - Reset, start, fail, stop, or publish a task
+- `update_task_tags` - Add or remove tags for a specific task
+- `update_task_parameters` - Update hyperparameters of a task
+- `upload_task_artifact` - Upload a local file or directory as a task artifact
+- `download_task_artifact` - Download a task artifact to local storage
 
 ### 🤖 Model Operations
-- `get_model_info` - Get model metadata and configuration details
-- `list_models` - Browse available models with filtering
+- `get_model_info` - Get input/output model metadata and configuration details
+- `list_models` - Browse available registered models with filtering
 - `get_model_artifacts` - Access model files and download URLs
+- `upload_model` - Upload/register new model weights under a task
+- `download_model` - Download registered model weights to local storage
 
-### 📁 Project Operations
+### 📁 Dataset Operations
+- `list_datasets` - List available ClearML datasets
+- `get_dataset_info` - Get details and file list of a specific dataset version
+- `create_dataset` - Create a new dataset version under a project
+- `add_files_to_dataset` - Add local files or directories to an unfinalized dataset
+- `finalize_dataset` - Finalize a dataset version (uploads files to fileserver)
+- `download_dataset` - Download all files of a dataset version locally
+- `list_dataset_files` - List and filter files within a dataset version
+
+### 📂 Project Operations
 - `list_projects` - Discover available ClearML projects
 - `get_project_stats` - Get project statistics and task summaries
 - `find_project_by_pattern` - Find projects matching name patterns
 - `find_experiment_in_project` - Find specific experiments within projects
+
+### 🚦 Queue & Agent Management
+- `list_queues` - List execution queues and their current entry count
+- `create_queue` - Create a new execution queue
+- `delete_queue` - Delete an execution queue
+- `remove_task_from_queue` - Remove a task entry from a queue
+- `list_agents` - List active execution agents/workers and their status
 
 ### 🔍 Analysis Tools
 - `compare_tasks` - Compare multiple tasks by specific metrics
